@@ -21,7 +21,6 @@ git checkout 5.6.x
 cp sample.env .env
 docker-compose up -d
 ```
-
 > Please make sure that you are using `5.6.x` branch.
 
 Your AAMP stack is now ready!! You can access it via `http://localhost`.
