@@ -1,0 +1,59 @@
+version: '3'
+services:
+  webserver:
+    build:
+      context: ./bin/webserver
+    container_name: aamp-php5.6-webserver
+    restart: always
+    expose:
+      - "9000"
+    ports:
+      - '80:80'
+      - '2222:22'
+      - '443:443'
+    links:
+      - redis
+      - mysql
+    volumes:
+      - '${DOCUMENT_ROOT-./www}:/var/www/html'
+      - '${PHP_INI-./config/php/php.ini}:/etc/php-5.6.d/custom.ini'
+      - '${VHOSTS_DIR-./config/apache/vhosts}:/etc/httpd/conf.sites'
+      - '${LOG_DIR-./logs/apache2}:/var/log/httpd/'
+    environment:
+      PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+
+      #WINDOWS
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+
+      #UBUNTU
+      #XDEBUG_CONFIG: remote_host=172.17.0.1 #docker network ip.
+      #PHP_IDE_CONFIG: "serverName=xdebug-docker" #phpstorm variavel de ambiente com o nome do server configurado.
+  redis:
+    build: ./bin/redis
+    container_name: aamp-php5.6-redis
+    restart: always
+    ports:
+      - '6379:6379'
+  mysql:
+    build: ./bin/mysql
+    container_name: aamp-php5.6-mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - '${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql'
+      - '${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  phpmyadmin:
+    build: ./bin/phpmyadmin
+    container_name: aamp-php5.6-phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
+    volumes:
+      - /sessions
