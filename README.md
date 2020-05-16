@@ -90,6 +90,7 @@ By default following extensions are installed.
 - pdo
 - redis
 - soap
+- xdebug
 - xml
 - xmlrpc
 
