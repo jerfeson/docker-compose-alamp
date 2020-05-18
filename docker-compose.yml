@@ -3,7 +3,7 @@ services:
   webserver:
     build:
       context: ./bin/webserver
-    container_name: aamp-php5.6-webserver
+    container_name: alamp-php5.6-webserver
     restart: always
     expose:
       - "9000"
@@ -30,13 +30,13 @@ services:
       #PHP_IDE_CONFIG: "serverName=xdebug-docker" #phpstorm variavel de ambiente com o nome do server configurado.
   redis:
     build: ./bin/redis
-    container_name: aamp-php5.6-redis
+    container_name: alamp-php5.6-redis
     restart: always
     ports:
       - '6379:6379'
   mysql:
     build: ./bin/mysql
-    container_name: aamp-php5.6-mysql
+    container_name: alamp-php5.6-mysql
     restart: always
     ports:
       - '3306:3306'
@@ -47,7 +47,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
   phpmyadmin:
     build: ./bin/phpmyadmin
-    container_name: aamp-php5.6-phpmyadmin
+    container_name: alamp-php5.6-phpmyadmin
     links:
       - mysql
     environment:

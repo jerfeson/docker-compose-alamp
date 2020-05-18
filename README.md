@@ -1,8 +1,8 @@
-# AAMP (Amazon Linux, Apache, Mysql & PHP) stack built with Docker Compose
+# ALAMP (Amazon Linux, Apache, Mysql & PHP) stack built with Docker Compose
 
 ![Landing Page](screenshot.png)
 
-This is a basic AAMP stack environment built using Docker Compose. It consists following:
+This is a basic ALAMP stack environment built using Docker Compose. It consists following:
 
 - PHP 5.6.X
 - Apache 2.4
@@ -14,7 +14,7 @@ This is a basic AAMP stack environment built using Docker Compose. It consists f
 Clone this repository on your local computer. Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/jerfeson/docker-compose-aamp.git
+git clone https://github.com/jerfeson/docker-compose-alamp.git
 cd docker-compose-lamp/
 git fetch --all
 git checkout 5.6.x
@@ -23,7 +23,7 @@ docker-compose up -d
 ```
 > Please make sure that you are using `5.6.x` branch.
 
-Your AAMP stack is now ready!! You can access it via `http://localhost`.
+Your ALAMP stack is now ready!! You can access it via `http://localhost`.
 
 ## Configuration
 
@@ -114,4 +114,4 @@ welcome to discuss a bugs, features and ideas.
 
 ## License
 
-jerfeson/docker-compose-aamp is release under the MIT license.
+jerfeson/docker-compose-alamp is release under the MIT license.

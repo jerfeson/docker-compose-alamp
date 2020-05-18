@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>AAMP</title>
+    <title>ALAMP</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -22,8 +22,8 @@
     <!-- Header -->
     <header id="header" class="alt">
         <span class="logo"><img src="images/logo.svg" alt=""/></span>
-        <h1>AAMP</h1>
-        <p>AAMP (Amazon Linux, Apache, Mysql & PHP) Stack built with Docker Compose<br/>
+        <h1>ALAMP</h1>
+        <p>ALAMP (Amazon Linux, Apache, Mysql & PHP) Stack built with Docker Compose<br/>
             built by <a href="https://github.com/jerfeson">Jerfeson Guerreiro</a></p>
     </header>
 
