@@ -57,3 +57,8 @@ services:
       - '8080:80'
     volumes:
       - /sessions
+  webgoat:
+    container_name: alamp-php5.6-webgoat
+    build: ./bin/webgoat
+    ports:
+      - '8081:8080'
